@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Home automation</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/avisi.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Home automation</h2>
+					<p>
+					<small>by <a href="http://www.avisi.nl">Gert-Jan van de Streek</a> / <a href="http://twitter.com/keerts">@keerts</a></small>
+					</p>
+				</section>
+
+				<section>Automation for the home</section>
+				<section>spending big bucks to get a specialized control system installed inside your walls</section>
+				<section>Gathering lots of incompatible, unreliable hardware and a lot of frustration</section>
+				<section>Make your life easier</section>
+				<section>Make your life more fun</section>
+				<section>Saves you lots of time</section>
+				<section>
+					<img width="100" src="images/wikipedia.png"><br/>
+					It involves the control and automation of lighting, heating, ventilation, air conditioning, and security, as well as home appliances such as washer/dryers, ovens or refrigerators/freezers.
+				</section>
+        <section>
+            <section data-background-video=videos/automower.mp4" data-background-video-loop data-background-video-muted>
+                <!--
+                <iframe width="1000" height="1000" src="https://www.youtube.com/embed/TyC0ijH2pF8?t=25" frameborder="0" allowfullscreen></iframe>
+                -->
+            </section>
+            <section>
+                <video id="vid1" controls muted data-autoplay src="videos/automower.mp4#t=25"></video>
+            </section>
+        </section>
+				<section>
+					<video data-autoplay src="videos/microbot-push-toggle-switches.mp4"></video>
+				</section>
+				<section><img width="400" src="images/microbot-push-manually.gif" ></section>
+				<section>
+					<blockquote>As our fan suggests, Push could start an external car heater in Sweden! Deploy Microbots to help your loved one to recover from an unfortunate skiing trip.</blockquote>
+					<img width="400" src="images/microbot-push-saves-lives.png" ></section>
+
+				</section>
+
+				<!-- mijn historie met home automation -->
+				<section><img width="400" src="images/tijdklok.jpg" ></section>
+				<section>433Mhz</section>
+				<section><img width="400" src="images/kaku-ab.jpg" ></section>
+				<section><img width="400" src="images/kaku-schakelaar.jpg" ></section>
+				<section><img width="400" src="images/kaku-inbouw.jpg" ></section>
+				<section><img width="400" src="images/kaku-bel.jpg" ></section>
+
+				<section>
+					<video muted data-autoplay src="videos/spheramid-demo.webm"></video>
+				</section>
+
+				<section><img width="400" src="images/knx-meterkast-complex.jpg" ></section>
+				<section><img width="400" src="images/knx-example-component.jpg" ></section>
+
+				<!-- protocollen, Zigbee, Zwave, modbus, knx -->
+
+				<section> 
+					<img width="400" src="images/proto-x10.jpg" >
+					 <aside class="notes">
+						The granddaddy of home automation protocols, X10 has been around since the mid 70’s. It started out as a powerline-based system (meaning it’s hard-wired into your walls), but eventually went wireless. It’s not known for great speed or communication between units. If you’re just gettting into home automation, we suggest picking up devices compatible with newer wireless standards, as X10 systems are typically more difficult to install in comparison.
+					</aside>
+				</section>
+				<section>
+					<img width="400" src="images/proto-insteon.png" >
+					<aside class="notes">
+						Insteon is a home automation protocol designed to bridge the gap between powerline-based and wireless protocols, so it uses both. It’s also compatible with x10 devices, so it’s not a half bad choice if you’ve got a house filled with X10 stuff already and are looking to transition to wireless. A wide range of Insteon devices are available right now, and you can browse through the company’s entire catalog on its official Smarthome Blog. 
+					</aside>
+				</section>
+				<section><h2>433Mhz</h2></section>
+				<section>
+					<img width="400" src="images/proto-zwave.jpg" >
+					<aside class="notes">
+						Z-Wave is a wireless home automation protocol that runs on the 908.42MHz frequency band. It’s relatively new in terms of home automation protocols, but has grown quite rapidly in the past few years. The group behind it, the Z-Wave Alliance, now boasts over 1,000 different compatible devices, giving you a wide range of options when it comes to automating your home. One of the key features of Z-Wave is that it utilizes a type of network called a “mesh network,” which essentially means that one Z-Wave product will pass the signal along to another until it reaches its intended destination. This relay system greatly extends its range. It’s also extremely low power, which is ideal for devices that rely on battery power.
+					</aside>
+				</section>
+				<section>
+					<img width="400" src="images/proto-zigbee.png" >
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<img width="400" src="images/proto-wifi.jpg" >
+					<aside class="notes">
+						Of course, Wi-Fi is already fairly ubiquitous, so it’s not surprising that a broad range of manufacturers have begun making smart home devices that work with it. If you already have a wireless router, you won’t need to pick up a hub/access point in order for your compatible devices to connect to it. This does, however, come with one key drawback: interference and bandwidth issues. If your house is already full of Wi-Fi-connected gadgets (TVs, game consoles, speaker docks, laptops, phones, tablets, etc.) then your smart devices will have to compete for bandwidth and will potentially be slower to respond. Wi-Fi also consumes a lot of power, so it’s not ideal for battery-based smart devices like doorbells and locks.
+					</aside>
+				</section>
+				<section>
+					<img width="400" src="images/proto-bluetooth.png" >
+					<aside class="notes">
+						BLE is short for Bluetooth Low Energy. There are tons of devices that have this baked into it – everything from bike locks to light bulbs to speaker docks – and it’s sometimes used in home automation, but usually not as the main protocol. As its name suggests, BLE doesn’t use a lot of power, but also has a fairly limited range compared to other networking protocols, so it’s not great for stuff that needs to stay connected all the time like security systems and motion sensors.
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h2>Thread</h2>
+						<aside class="notes">
+							Thread is an IPv6-based, closed-documentation, royalty-free[1] networking protocol for Internet of Things (IoT) "smart" home automation devices to communicate on a local wireless mesh network. IPv6 over Low power Wireless Personal Area Networks.
+						</aside>
+					</section>
+					<section>
+						6LoWPAN: IPv6 over Low power Wireless Personal Area Networks.
+					</section>
+				</section>
+				<section>
+					<img width="800" src="images/proto-knx.png" >
+					<aside class="notes">
+An abbreviation for the word Konnex and describes a standardized protocol for building control and also has its place in traditional home automation. Its biggest advantage is the independence of any particular hardware platform which means that it could also be executed on an 8-bit microcontroller. The technology focuses primarily on safety as well as energy savings. That’s why the monitoring of all the different components in a KNX system plays an important role. If the air conditioning , the heating and the lighting is controlled by a single system multiple possibilities for cutting costs arise.
+
+KNX is based on three technologies: EIB (European Installation Bus), EHS (European Home Systems Protocol) and BatiBUS. It is therefore built on a well established foundation that has been matured over 24 years.
+
+Moreover it allows various ways of communication including twisted pair, radio frequency, infrared, power line and IP/Ethernet. There is no need for centralized control centers since all devices speak the same language and communicate via the same Bus.
+
+Like Z-Wave and Zigbee , KNX has its own association that drives the development of the technology. There are currently about 370 members in the KNX association.
+					</aside>
+				</section>
+				<section><strike>HomeKit</strike></section>
+
+				<!-- smart hubs, samsung, alexa, nest, vera,  -->
+				<section><img width="400" src="images/hub-smartthings.png" ></section>
+				<section><img width="400" src="images/hub-wink.png" ></section>
+				<section><img width="400" src="images/hub-vera.png" ></section>
+				<section><img width="400" src="images/hub-homey.png" ></section>
+				<section><img width="400" src="images/hub-hue.jpg" ></section>
+				<section><img width="400" src="images/hub-nest.jpg" ></section>
+				<section><img width="400" src="images/hub-toon.jpg" ></section>
+				<section><img width="400" src="images/hub-alexa.jpg" ></section>
+				<section><img width="400" src="images/hub-home.jpg" ></section>
+
+				<!-- home automation and iot -->
+
+				<!-- market, google, apple,  -->
+
+				<!-- the dangers of home automation -->
+				<section><iframe width="800px" height="8000px"  src="https://arstechnica.com/tech-policy/2017/02/amazon-wont-disclose-if-alexa-witnessed-a-murder/"></iframe></section>
+
+				<!-- the cost -->
+
+				<!-- hands on -->
+
+				<section><img width="400" src="images/home-assistant.png" ></section>
+				<section><img width="400" src="images/future.jpg" ></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+		 Reveal.initialize({
+       history: true,
+        dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
