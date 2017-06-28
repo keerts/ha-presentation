@@ -7,7 +7,7 @@
 		<title>Home automation</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/avisi.css">
+		<link rel="stylesheet" href="css/theme/black.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -31,6 +31,7 @@
 					</p>
 				</section>
 
+        <section data-background-image="images/ha.jpg"> </section>
 				<section>Automation for the home</section>
 				<section>spending big bucks to get a specialized control system installed inside your walls</section>
 				<section>Gathering lots of incompatible, unreliable hardware and a lot of frustration</section>
@@ -41,25 +42,23 @@
 					<img width="100" src="images/wikipedia.png"><br/>
 					It involves the control and automation of lighting, heating, ventilation, air conditioning, and security, as well as home appliances such as washer/dryers, ovens or refrigerators/freezers.
 				</section>
-        <section>
-            <section data-background-video=videos/automower.mp4" data-background-video-loop data-background-video-muted>
-                <!--
-                <iframe width="1000" height="1000" src="https://www.youtube.com/embed/TyC0ijH2pF8?t=25" frameborder="0" allowfullscreen></iframe>
-                -->
-            </section>
-            <section>
-                <video id="vid1" controls muted data-autoplay src="videos/automower.mp4#t=25"></video>
-            </section>
-        </section>
-				<section>
-					<video data-autoplay src="videos/microbot-push-toggle-switches.mp4"></video>
-				</section>
+        <section data-background-video=videos/automower.mp4" data-background-video-loop data-background-video-muted> </section>
+        <section data-background-video=videos/jost.mov" data-background-video-loop data-background-video-muted> </section>
+        <section data-background-video="videos/microbot-push-toggle-switches.mp4" data-background-video-muted data-background-video-loop></video></section>
+				<section data-background-video="videos/microbot-push-toggle-switches-2.mp4" data-background-video-muted data-background-video-loop></video></section>
 				<section><img width="400" src="images/microbot-push-manually.gif" ></section>
 				<section>
 					<blockquote>As our fan suggests, Push could start an external car heater in Sweden! Deploy Microbots to help your loved one to recover from an unfortunate skiing trip.</blockquote>
 					<img width="400" src="images/microbot-push-saves-lives.png" ></section>
 
 				</section>
+
+				<section><img width="400" src="images/stuffed-cables.jpg" ></section>
+				<section><img width="400" src="images/stuffed-cables-2.jpg" ></section>
+				<section><img width="400" src="images/stuffed-tweakers.png" ></section>
+				<section><img width="400" src="images/stuffed-cabling-3.jpg" ></section>
+
+				<section>My history with HA</section>
 
 				<!-- mijn historie met home automation -->
 				<section><img width="400" src="images/tijdklok.jpg" ></section>
@@ -69,12 +68,12 @@
 				<section><img width="400" src="images/kaku-inbouw.jpg" ></section>
 				<section><img width="400" src="images/kaku-bel.jpg" ></section>
 
-				<section>
-					<video muted data-autoplay src="videos/spheramid-demo.webm"></video>
+				<section data-background-video="videos/spheramid-demo.webm" data-background-video-muted data-background-video-loop></video>
 				</section>
 
 				<section><img width="400" src="images/knx-meterkast-complex.jpg" ></section>
 				<section><img width="400" src="images/knx-example-component.jpg" ></section>
+				<section><img width="400" src="images/knx-example-setup.jpg" ></section>
 
 				<!-- protocollen, Zigbee, Zwave, modbus, knx -->
 
@@ -139,9 +138,11 @@ Like Z-Wave and Zigbee , KNX has its own association that drives the development
 				</section>
 				<section><strike>HomeKit</strike></section>
 
+        <section><h2>Hubs</h2></section>
+
 				<!-- smart hubs, samsung, alexa, nest, vera,  -->
 				<section><img width="400" src="images/hub-smartthings.png" ></section>
-				<section><img width="400" src="images/hub-wink.png" ></section>
+				<section><img width="400" src="images/hub-wink.jpg" ></section>
 				<section><img width="400" src="images/hub-vera.png" ></section>
 				<section><img width="400" src="images/hub-homey.png" ></section>
 				<section><img width="400" src="images/hub-hue.jpg" ></section>
@@ -150,19 +151,158 @@ Like Z-Wave and Zigbee , KNX has its own association that drives the development
 				<section><img width="400" src="images/hub-alexa.jpg" ></section>
 				<section><img width="400" src="images/hub-home.jpg" ></section>
 
-				<!-- home automation and iot -->
+        <section><h2>Devices</h2></section>
+        <section><img width="600" src="images/hardware-allthethings-2.jpg" ></section>
+
+<section>
+        <section><img width="400" src="images/gerstree-meterkast.jpg" ></section>
+        <section><img width="400" src="images/gerstree-ethernet.jpg" ></section>
+    </section>
+        <section><img width="600" src="images/gerstree-wall-switches.jpg" ></section>
+        <section><img width="600" src="images/gerstree-movement-detector.jpg" ></section>
+        <section><img width="400" src="images/gerstree-smoke-detector.jpg" ></section>
+        <section><img width="400" src="images/gerstree-hue.jpg" ></section>
+        <section><img width="400" src="images/gerstree-camera.jpg" ></section>
+
+        <section><h2>Bringing it all together</h2></section>
+
+				<!-- Bringing it all together -->
+				    <section><img width="400" src="images/home-assistant.png" ></section>
+        <section>
+            <section><iframe width="800px" height="8000px"  src="http://localhost:8123"></iframe></section>
+            <section><a href="http://localhost:8123">HA</a></section>
+        </section>
+
+        <section>
+            Always coffee
+            <pre><code>
+automation espresso:
+  hide_entity: True
+  trigger:
+    platform: time
+    after: "07:00:00"
+  action:
+    service: switch.turn_on
+    entity_id: switch.espresso
+
+automation espresso off:
+  hide_entity: True
+  trigger:
+    platform: time
+    after: "21:45:00"
+  action:
+    service: switch.turn_off
+    entity_id: switch.espresso
+            </code></pre>
+        </section>
+
+        <section>
+            Schemering
+            <pre><code>
+automation woonkamer:
+  hide_entity: True
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-01:00:00"
+  action:
+    - service: light.turn_on
+      entity_id: light.living
+    - service: switch.turn_on
+      entity_id: switch.c4
+    - service: light.turn_on
+      entity_id: light.veranda
+    - service: light.turn_on
+      entity_id: light.overstek
+            </code></pre>
+        </section>
+
+        <section>
+            There is someone at the door
+            <pre><code>
+automation knx bel ingedrukt:
+  - alias: "someone is at the door"
+    trigger:
+      - platform: state
+        entity_id: switch.bel
+        to: "on"
+    action:
+      - service: notify.dome
+        data:
+          message: "please reload"
+      - service: telegram_bot.send_photo
+        data:
+          caption: "Er staat iemand bij de deur"
+          file: /usr/lib/unifi-video/data/snapshot/F09FC22F7C4D/current.jpg
+      - service: media_player.play_media
+        entity_id: media_player.chromecast_radio
+        data:
+          media_content_id: "http://192.168.192.59:8091/doorbell.mp3"
+          media_content_type: "audio/mp3"
+      - service: notify.gerstree
+        data:
+          message: "someone at the door!"
+          data:
+            photo:
+              - file: /usr/lib/unifi-video/data/snapshot/F09FC22F7C4D/current.jpg
+      - service: media_player.media_pause
+        entity_id: media_player.tv
+      - service: media_player.media_pause
+        entity_id: media_player.chromecast_tv
+      - service: media_player.media_pause
+        entity_id: media_player.spotify
+            </code></pre>
+        </section>
+
+        <section>
+            Ready to sleep
+            <pre><code>
+  trigger:                                              
+    - platform: state                                   
+      entity_id: switch.andreas_2                       
+      from: "off"                                       
+      to: "on"                                          
+  action:                                               
+    - service: scene.turn_on                            
+      entity_id: scene.andreas_reading 
+            </code></pre>
+        </section>
 
 				<!-- market, google, apple,  -->
 
 				<!-- the dangers of home automation -->
-				<section><iframe width="800px" height="8000px"  src="https://arstechnica.com/tech-policy/2017/02/amazon-wont-disclose-if-alexa-witnessed-a-murder/"></iframe></section>
+        <section><h2>The dangers of HA</h2></section>
+				<section><img width="600" src="images/danger-treehouse-of-horror.jpg" ></section>
+				<section data-background-video="videos/alexa-gone-wild.mp4" data-background-video-loop></video></section>
+
+        <section><h2>Security</h2></section>
+				<section><img width="600" src="images/danger-cameras.png" ></section>
+				<section><img width="600" src="images/danger-insecure-rejoin.png" ></section>
+
+        <section><h2>Privacy</h2></section>
+				<section><img width="400" src="images/danger-murder.png" ></section>
 
 				<!-- the cost -->
+        <section>The cost</section>
+        <section>300</section>
+        <section>1.000</section>
+				<section><img width="400" src="images/cost-aws.png" ></section>
+        <section>3.000</section>
+        <section>10.000</section>
+        <section>100.000</section>
+
+				<!-- but there is more -->
+
+				<section><img width="400" src="images/future.jpg" ></section>
+				<section data-background-video="videos/farmbot.mp4" data-background-video-muted data-background-video-loop></video></section>
+				<section data-background-image="images/plaato.gif"></video></section>
 
 				<!-- hands on -->
-
-				<section><img width="400" src="images/home-assistant.png" ></section>
-				<section><img width="400" src="images/future.jpg" ></section>
+        <section>
+            <h2>Hands-on</h2>
+            <a href="https://github.com/keerts/ha-handson">github.com/keerts/ha-handson</a><br/>
+            <a href="https://github.com/keerts/ha-presentation">github.com/keerts/ha-presentation</a>
+        </section>
 			</div>
 		</div>
 
